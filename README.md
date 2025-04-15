@@ -1,9 +1,27 @@
 # EasyTaskManager
 
-To install the cd in the project directory and run "docker-compose up -d --build"
-This will create dockers:
-backend - python API
-db - MySQL database (permanent volume can be increased by adding it to the last raw of docker-compose file.yml)
-interface - the TypeScript interface will be installed on npm >18
-nginx - interface/nginx.conf
-redis - necessary for saving sessions
+## 🚀 Установка
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/kainzeyg/EasyTaskManager.git
+   cd EasyTaskManager
+   ```
+
+2. Запустите сборку и запуск контейнеров:
+   ```bash
+   docker-compose up -d --build
+   ```
+
+## 🐳 Контейнеры
+
+Проект поднимается в виде нескольких Docker-контейнеров:
+
+- **`backend`** — Python API
+- **`db`** — MySQL база данных  
+  💡 Объем постоянного хранилища можно увеличить, изменив последний блок в `docker-compose.yml`
+- **`interface`** — TypeScript интерфейс  
+  🔧 Требует Node.js версии > 18
+- **`nginx`** — веб-сервер  
+  📁 Конфигурация: `interface/nginx.conf`
+- **`redis`** — необходим для хранения сессий
